@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Área Cliente - BankApp</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="brand">BankApp</div>
+        <div class="links">
+            <a href="cuentas/cuentas.html">Mis cuentas</a>
+            <a href="cuentas/transferir.html">Transferencias</a>
+            <a href="#" id="logout-link">Cerrar sesión</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Bienvenido, <span id="cliente-nombre"></span></h1>
+        <h2 id="balance-total">Balance total: 0</h2>
+
+        <h2>Mis Cuentas</h2>
+        <div id="cuentas-container">
+            
+            <!-- Se llenará dinámicamente con JS -->
+        </div>
+    </div>
+    <script>
+  const nombre = localStorage.getItem("cliente-nombre");
+  if (nombre) {
+      document.getElementById("cliente-nombre").innerText = nombre;
+  }
+</script>
+
+    <script src="/logout.js"></script>
+    <script src="clientes/clientes.js"></script>
+</body>
+</html>

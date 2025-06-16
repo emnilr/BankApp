@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuarios - BankApp</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="brand">BankApp</div>
+        <div class="links">
+            <a href="/admin.html">Inicio</a>
+            <a href="registros.html">Registros</a>
+            <a href="#" id="logout-link">Cerrar sesión</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Gestión de Usuarios</h1>
+
+        <div class="search-bar">
+            <input type="number" id="buscar-id" placeholder="Buscar por ID">
+            <button id="buscar-btn">Buscar</button>
+        </div>
+
+        <div class="user-form">
+            <h2>Crear nuevo usuario</h2>
+            <form id="crear-usuario-form">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="contraseña" placeholder="Contraseña" required>
+                <input type="text" name="telefono" placeholder="Teléfono" required>
+                <select name="tipo_usuario" required>
+                    <option value="CLIENTE">Cliente</option>
+                    <option value="EMPLEADO">Empleado</option>
+                    <option value="ADMINISTRADOR">Administrador</option>
+                </select>
+                <button type="submit">Crear</button>
+            </form>
+            <form id="editar-usuario-form" style="display: none; margin-bottom: 20px;">
+    <input type="hidden" id="editar-id">
+    <input type="text" id="editar-nombre" placeholder="Nombre">
+    <input type="email" id="editar-email" placeholder="Email">
+    <input type="text" id="editar-telefono" placeholder="Teléfono">
+    <button type="submit">Guardar cambios</button>
+</form>
+        </div>
+
+        <h2>Lista de Usuarios</h2>
+        <table id="tabla-usuarios">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>Tipo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Se llenará por JS -->
+            </tbody>
+        </table>
+    </div>
+    <script>document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("buscar-btn")?.addEventListener("click", buscarUsuarioPorId);
+    cargarUsuarios();
+});</script>
+
+    <script src="../logout.js"></script>
+    <script src="usuarios.js"></script>
+</body>
+</html>
