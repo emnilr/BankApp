@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - BankApp</title>
+    <link rel="stylesheet" href="stylesauth.css">
+</head>
+
+<script>
+window.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("login-form");
+
+    form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const email = e.target.email.value;
+        const contraseña = e.target.password.value;
+
+        try {
+            const response = await fetch("http://localhost:8080/api/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ email, contraseña })
+            });
+
+            if (response.ok) {
+                const token = await response.text();
+
+                localStorage.setItem("jwt", token);
+
+                const payload = JSON.parse(atob(token.split('.')[1]));
+                const rol = payload.tipo_usuario;
+
+                if (rol === "Cliente") {
+                    window.location.href = "cliente.html";
+                } else if (rol === "Empleado") {
+                    window.location.href = "empleado.html";
+                } else {
+                    window.location.href = "admin.html";
+                }
+            } else {
+                alert("Login incorrecto");
+            }
+
+        } catch (error) {
+            console.error("Error en el login:", error);
+            alert("Error al intentar iniciar sesión");
+        }
+    });
+});
+
+</script>
+
+
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <label>Email:</label>
+            <input type="email" name="email" required>
+            <label>Password:</label>
+            <input type="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+        <a class="register-link" href="registro.html">Don't have an account? Register here</a>
+    </div>
+</body>
+
+</html>
