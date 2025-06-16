@@ -1,6 +1,4 @@
 # BankApp
-#### Video Demo:  <https://youtu.be/2Q8i_SC1AiI>
-#### Description:
 **BankApp** is a web application developed using **Spring Boot** for the backend and **HTML, CSS, and JavaScript** for the frontend.
 The app simulates a banking platform where different types of users—**clients**, **employees**, and **administrators**—interact with the system based on their roles and permissions.
 
