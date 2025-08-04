@@ -1,6 +1,6 @@
 # BankApp
 **BankApp** is a web application developed using **Spring Boot** for the backend and **HTML, CSS, and JavaScript** for the frontend.
-The app simulates a banking platform where different types of users—**clients**, **employees**, and **administrators**—interact with the system based on their roles and permissions.
+The app simulates a banking platform where different types of users; **clients**, **employees**, and **administrators**, interact with the system based on their roles and permissions.
 
 The project includes features such as user management, transactions, bank account operations, and access control using **JWT (JSON Web Tokens)**. It is structured using clean architecture principles, REST APIs, security best practices, and JPA inheritance, providing a friendly and functional interface for each user type.
 
