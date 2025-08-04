@@ -34,7 +34,7 @@ The final diagram and the one that I was based on to make the full project.
 ### Frontend
 - HTML5
 - CSS3
-- Vanilla JavaScript
+- JavaScript
 
 ---
 
