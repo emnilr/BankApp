@@ -12,7 +12,7 @@ My first thoughts on the structure of the project.
 
 ![Rough class diagram](class_diagram.png)
 
-This diagram was based on the first idea draft that I had, so not all the functions where implemented in the project.
+This diagram was based on the first idea draft that I had, so not all the functions were implemented in the project.
 
 ![Final class diagram](final.png)
 
